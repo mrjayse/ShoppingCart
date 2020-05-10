@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Оформление заказа</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body data-page="order">
+        <ul class="nav nav-pills">
+            <li><a href="/">Каталог</a></li>
+            <li><a href="cart.html">Корзина<span class="badge"></span></a></li>
+            <li class="active"><a href="order.html">Оформление заказа</a></li>
+        </ul>
+        <br />
+        <div id="order-message" class="alert alert-info"></div>
+        <form id="order-form" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="input-name" class="col-sm-2 control-label">Ваше имя *</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="input-name" name="name" placeholder="Ваше имя">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-email" class="col-sm-2 control-label">Email *</label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" id="input-email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-phone" class="col-sm-2 control-label">Телефон</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="input-phone" name="phone" placeholder="Телефон">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-address" class="col-sm-2 control-label">Адрес доставки</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" id="input-address" name="address" placeholder="Адрес доставки" row="3"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-message" class="col-sm-2 control-label">Сообщение</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" id="input-message" name="message" placeholder="Дополнительная информация" row="3"></textarea>
+                    <br />
+                    <div id="alert-validation" class="alert alert-danger hidden">
+                        <button type="button" class="close js-close-alert">&times;</button>
+                        <strong>Ошибка!</strong> Заполните обязательные поля, отмеченные *
+                    </div>
+                    <div id="alert-order-done" class="alert alert-success hidden">
+                        <button type="button" class="close js-close-alert">&times;</button>
+                        <strong>Спасибо за заказ!</strong> Скоро мы с Вами свяжемся
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button id="order-btn" type="submit" class="btn btn-primary">Сделать заказ</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script id="order-message-template" type="text/template">
+        <% if (count !== 0) { %>
+            Вы добавили в корзину <%= count %> товара(ов) на общую сумму <%= summa %> рублей.
+            Заполните форму ниже, а затем нажмите кнопку "Сделать заказ"
+        <% } %>
+    </script>
+
+    <script src="js/assets/jquery.min.js" type="text/javascript"></script>
+    <script src="js/assets/jquery.cookie.js" type="text/javascript"></script>
+    <script src="js/assets/underscore.min.js" type="text/javascript"></script>
+    <script src="js/cart.js" type="text/javascript"></script>
+    <script src="js/order.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>
